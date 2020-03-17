@@ -13,5 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Memory Management">
+      <UniqueIdentifier>{29d7cf3f-a11c-4bf1-945e-0350d7c404f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory Management">
+      <UniqueIdentifier>{147b14b2-56a8-4d30-aa7e-bb1d8e054d01}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\PoolAllocator.cpp">
+      <Filter>Source Files\Memory Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\StackAllocator.cpp">
+      <Filter>Source Files\Memory Management</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\PoolAllocator.h">
+      <Filter>Header Files\Memory Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\StackAllocator.h">
+      <Filter>Header Files\Memory Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Allocator.h">
+      <Filter>Header Files\Memory Management</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
