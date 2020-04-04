@@ -22,9 +22,9 @@ private:
 	std::vector<Texture> m_loadedTextures;
 
 	void SetFolderDirectory(const std::string& path);
-	void ProcessNode(const aiNode* node, const aiScene* sceneObject);
+	void ProcessNode(const aiNode* node, const aiScene* sceneObject, FileManager* pFileManager);
 
 	std::vector<Vertex> GetMeshVertices(aiMesh* mesh);
 	std::vector<unsigned int> GetMeshIndices(aiMesh* mesh);
-	std::vector<Texture> GetMeshTextures(aiMaterial* material, aiTextureType textureType);
+	std::vector<Texture> GetMeshTextures(aiMaterial* material, aiTextureType textureType, FileManager* pFileManager);
 };

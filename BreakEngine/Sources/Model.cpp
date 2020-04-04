@@ -102,14 +102,14 @@ Model::Model(const std::string& path, FileManager* pFileManager) {
 
 
 	/// Initialize the model object
-	ProcessNode(pSceneObject->mRootNode, pSceneObject); // Add meshes by recursively traversing the nodes
+	ProcessNode(pSceneObject->mRootNode, pSceneObject, pFileManager); // Add meshes by recursively traversing the nodes
 }
 
 void Model::SetFolderDirectory(const std::string& path) {
 	m_directory = path.substr(0, path.find_last_of('/') + 1);
 }
 
-void Model::ProcessNode(const aiNode* node, const aiScene* sceneObject) {
+void Model::ProcessNode(const aiNode* node, const aiScene* sceneObject, FileManager* pFileManager) {
 	/// Create/Push mesh objects to the "m_meshes" vector
 	for (unsigned int meshIndex = 0; meshIndex < node->mNumMeshes; meshIndex++) { // index in the (node's) meshes array
 
@@ -124,11 +124,11 @@ void Model::ProcessNode(const aiNode* node, const aiScene* sceneObject) {
 			aiMaterial* pMaterial = sceneObject->mMaterials[materialIndex];
 
 			/// Get the material's textures
-			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_AMBIENT));
-			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_DIFFUSE));
-			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_SPECULAR));
-			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_NORMALS));
-			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_HEIGHT));
+			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_AMBIENT, pFileManager));
+			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_DIFFUSE, pFileManager));
+			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_SPECULAR, pFileManager));
+			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_NORMALS, pFileManager));
+			meshObject.AddTextureVector(GetMeshTextures(pMaterial, aiTextureType_HEIGHT, pFileManager));
 		}
 
 		m_meshes.push_back(std::move(meshObject));
@@ -137,7 +137,7 @@ void Model::ProcessNode(const aiNode* node, const aiScene* sceneObject) {
 	/// Process the children nodes (recursive calls)
 	for (unsigned int childIndex = 0; childIndex < node->mNumChildren; childIndex++) {
 		aiNode* pChildNode = node->mChildren[childIndex];
-		ProcessNode(pChildNode, sceneObject);
+		ProcessNode(pChildNode, sceneObject, pFileManager);
 	}
 }
 
@@ -179,7 +179,7 @@ std::vector<unsigned int> Model::GetMeshIndices(aiMesh* pMesh) {
 	}
 	return std::move(indices);
 }
-std::vector<Texture> Model::GetMeshTextures(aiMaterial* pMaterial, aiTextureType textureType) {
+std::vector<Texture> Model::GetMeshTextures(aiMaterial* pMaterial, aiTextureType textureType, FileManager* pFileManager) {
 	std::vector<Texture> textures;
 	for (unsigned int textureIndex = 0; textureIndex < pMaterial->GetTextureCount(textureType); textureIndex++) {
 		/// Get the texture name
@@ -227,7 +227,7 @@ std::vector<Texture> Model::GetMeshTextures(aiMaterial* pMaterial, aiTextureType
 				const std::string fullPath = m_directory + path.C_Str();
 
 				/// Create a new texture and push it into the model's loaded textures
-				m_loadedTextures.push_back(Texture(fullPath.c_str(), myTextureType));
+				m_loadedTextures.push_back(Texture(fullPath.c_str(), myTextureType, pFileManager));
 
 				/// Push the texture into the mesh's textures vector
 				textures.push_back(m_loadedTextures.back());

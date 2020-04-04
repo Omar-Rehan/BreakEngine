@@ -124,7 +124,6 @@ int main() {
 	app.Initialize();
 	app.m_pFileManager->Mount("Assets/Nanosuit Model.zip");
 	Model m = app.m_pResourceManager->GetModel("Nanosuit Model/nanosuit.obj");
-
 	ShaderProgram s = ShaderProgram("Shaders/SimpleNanosuitVShader.glsl", "Shaders/SimpleNanosuitFShader.glsl");
 	
 	Timer timer;

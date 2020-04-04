@@ -12,7 +12,7 @@ void ResourceManager::Terminate() {
 
 Texture ResourceManager::GetTexture(const std::string& relativePath, ImageMapType imageType) {
 	if (m_texturesCache.find(relativePath) == m_texturesCache.end())
-		m_texturesCache[relativePath] = Texture(relativePath.c_str(), imageType);
+		m_texturesCache[relativePath] = Texture(relativePath.c_str(), imageType, m_pFileManager);
 
 	return m_texturesCache[relativePath];
 };

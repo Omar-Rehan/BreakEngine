@@ -17,9 +17,13 @@ File* FileManager::CreateNewFile() {
 	return m_pFiles.front();
 }
 void FileManager::DestroyFile(File* pFile) {
-	auto it = std::find(m_pFiles.begin(), m_pFiles.end(), pFile);
+	std::list<File*>::iterator it = std::find(m_pFiles.begin(), m_pFiles.end(), pFile);
+	if (it == m_pFiles.end()) {
+		std::cout << "cannot find file in list" << std::endl;
+		return;
+	}
+	delete (*it);
 	m_pFiles.erase(it);
-	delete *it;
 }
 
 void FileManager::AddSearchDirectory(const char* dir) {
