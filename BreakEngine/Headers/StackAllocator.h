@@ -1,7 +1,7 @@
 #pragma once
-#include "Allocator.h"
+#include <cstdint>
 
-class StackAllocator : public Allocator {
+class StackAllocator {
 private:
 	struct Stack {
 	private:
@@ -42,10 +42,18 @@ public:
 
 private:
 	Stack m_allocatedObjects;
+	uint8_t* m_pMemoryBlock = nullptr;
 
 	void* MakeSpace(size_t bytes);
 	void FreeSpace(uint8_t* pMemory);
 	virtual void Clear();
+
+	template <typename T>
+	inline T* AlignPointer(T* ptr, size_t align) {
+		const uintptr_t address = reinterpret_cast<uintptr_t>(ptr);
+		const size_t mask = align - 1;
+		return reinterpret_cast<T*>((address + mask) & ~mask);
+	}
 
 	StackAllocator(const StackAllocator&) = delete;
 	StackAllocator(StackAllocator&&) = delete;

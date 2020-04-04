@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "StackAllocator.h"
 
 StackAllocator::StackAllocator(size_t totalBytes) {

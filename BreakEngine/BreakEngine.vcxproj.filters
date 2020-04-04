@@ -19,6 +19,27 @@
     <Filter Include="Source Files\Memory Management">
       <UniqueIdentifier>{147b14b2-56a8-4d30-aa7e-bb1d8e054d01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Resource Management">
+      <UniqueIdentifier>{d3977f42-7fe3-4b7d-a347-030428b65ee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resource Management">
+      <UniqueIdentifier>{2b2e1ee7-4151-44e9-b950-f02cc1eececf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{f761e6d6-be4a-44cc-b757-31f487e88725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{a73772f7-aaa5-42b4-af23-54921f66f97e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{eb836500-c8f1-471f-b8b2-f505e1bf45b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\File Management">
+      <UniqueIdentifier>{db403543-a250-4129-8915-aeec5ae8efa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\File Management">
+      <UniqueIdentifier>{e052ce97-65c1-4be0-b0e8-a191f41194f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Source.cpp">
@@ -33,6 +54,39 @@
     <ClCompile Include="Sources\StackAllocator.cpp">
       <Filter>Source Files\Memory Management</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\ResourceManager.cpp">
+      <Filter>Source Files\Resource Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\ShaderProgram.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Texture.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Model.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Mesh.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\FileManager.cpp">
+      <Filter>Source Files\File Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Camera.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Mouse.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Timer.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\Application.h">
@@ -44,8 +98,56 @@
     <ClInclude Include="Headers\StackAllocator.h">
       <Filter>Header Files\Memory Management</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\Allocator.h">
-      <Filter>Header Files\Memory Management</Filter>
+    <ClInclude Include="Headers\ResourceManager.h">
+      <Filter>Header Files\Resource Management</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\ShaderProgram.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Texture.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Model.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Vertex.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Mesh.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\FileManager.h">
+      <Filter>Header Files\File Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Camera.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Mouse.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Timer.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Shaders\SimpleFShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\SimpleNanosuitFShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\SimpleNanosuitVShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\SimpleVShader.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

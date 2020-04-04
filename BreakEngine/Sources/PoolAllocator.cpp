@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "PoolAllocator.h"
 
 PoolAllocator::PoolAllocator(int numOfNodes, size_t nodeSize, size_t alignment) {
