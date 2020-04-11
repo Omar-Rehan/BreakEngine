@@ -4,6 +4,7 @@
 
 void FileManager::Initialize() {
 	PHYSFS_init(NULL);
+	AddSearchDirectory("Assets/");
 }
 void FileManager::Terminate() {
 	for (auto& e : m_pFiles) delete e;

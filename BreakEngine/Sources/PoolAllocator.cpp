@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "PoolAllocator.h"
 
-PoolAllocator::PoolAllocator(int numOfNodes, size_t nodeSize, size_t alignment) {
+void PoolAllocator::Initialize(int numOfNodes, size_t nodeSize, size_t alignment) {
 	assert(!(alignment & (alignment - 1)) && "alignment is not a power of 2\n");
 	assert(nodeSize >= sizeof(uintptr_t) && "node size is too small\n");
 	Clear();
@@ -18,7 +18,7 @@ PoolAllocator::PoolAllocator(int numOfNodes, size_t nodeSize, size_t alignment) 
 	}
 	*ptr = reinterpret_cast<uintptr_t>(nullptr);
 }
-PoolAllocator::~PoolAllocator() {
+void PoolAllocator::Terminate() {
 	Clear();
 }
 

@@ -3,9 +3,11 @@
 
 class PoolAllocator {
 public:
-	PoolAllocator(int numOfNodes, size_t nodeSize, size_t alignment);
-	~PoolAllocator();
+	PoolAllocator() = default;
+	~PoolAllocator() = default;
 
+	void Initialize(int numOfNodes, size_t nodeSize, size_t alignment);
+	void Terminate();
 	void* Allocate();
 	void Deallocate(void* pMemory);
 	void Clear();

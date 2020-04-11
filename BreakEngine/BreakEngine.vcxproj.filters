@@ -34,28 +34,43 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{eb836500-c8f1-471f-b8b2-f505e1bf45b1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\File Management">
-      <UniqueIdentifier>{db403543-a250-4129-8915-aeec5ae8efa3}</UniqueIdentifier>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{b8531c10-538f-473d-a32e-0101239f3c13}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\File Management">
-      <UniqueIdentifier>{e052ce97-65c1-4be0-b0e8-a191f41194f3}</UniqueIdentifier>
+    <Filter Include="Header Files\Graphics\Textures">
+      <UniqueIdentifier>{8cc0111a-f6c8-41af-98b4-061828638713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\Models">
+      <UniqueIdentifier>{fc68ece2-c09f-4285-9ce4-ee228a51e0fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{36c05a4a-a4fe-46c3-a4cd-72e96029c4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Models">
+      <UniqueIdentifier>{82a95a98-5606-478f-b73b-5dd3ec747d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Textures">
+      <UniqueIdentifier>{7c49fa42-c7c7-4715-b6fa-c554ffa1a97f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{2497782f-3f5e-4102-9435-e8c132bb3abe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{759c589b-caf2-45f9-8f6a-edfadd0037cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SubSystems">
+      <UniqueIdentifier>{cff94164-52ad-431e-aed4-feff73997333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SubSystems">
+      <UniqueIdentifier>{52861f78-5e96-4d6d-b45c-1012523f6d46}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\PoolAllocator.cpp">
       <Filter>Source Files\Memory Management</Filter>
     </ClCompile>
     <ClCompile Include="Sources\StackAllocator.cpp">
       <Filter>Source Files\Memory Management</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\pch.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sources\ResourceManager.cpp">
       <Filter>Source Files\Resource Management</Filter>
@@ -63,35 +78,47 @@
     <ClCompile Include="Sources\ShaderProgram.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\FileManager.cpp">
+      <Filter>Source Files\Resource Management</Filter>
+    </ClCompile>
     <ClCompile Include="Sources\Texture.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\Model.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\Mesh.cpp">
-      <Filter>Source Files\Graphics</Filter>
+      <Filter>Source Files\Graphics\Textures</Filter>
     </ClCompile>
     <ClCompile Include="Sources\stb_image.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Graphics\Textures</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\FileManager.cpp">
-      <Filter>Source Files\File Management</Filter>
+    <ClCompile Include="Sources\Mesh.cpp">
+      <Filter>Source Files\Graphics\Models</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Camera.cpp">
-      <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\Mouse.cpp">
-      <Filter>Source Files\Graphics</Filter>
+    <ClCompile Include="Sources\Model.cpp">
+      <Filter>Source Files\Graphics\Models</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Timer.cpp">
-      <Filter>Source Files\Graphics</Filter>
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Mouse.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Camera.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Application.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GlfwClass.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\pch.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Source.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\JobSystem.cpp">
+      <Filter>Source Files\SubSystems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Headers\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Headers\PoolAllocator.h">
       <Filter>Header Files\Memory Management</Filter>
     </ClInclude>
@@ -101,38 +128,47 @@
     <ClInclude Include="Headers\ResourceManager.h">
       <Filter>Header Files\Resource Management</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Headers\ShaderProgram.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\Texture.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\Model.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Headers\Vertex.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\Mesh.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Headers\FileManager.h">
-      <Filter>Header Files\File Management</Filter>
+      <Filter>Header Files\Resource Management</Filter>
     </ClInclude>
     <ClInclude Include="Headers\Camera.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\Mouse.h">
-      <Filter>Header Files\Graphics</Filter>
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Headers\Timer.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\stb_image.h">
+      <Filter>Header Files\Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Texture.h">
+      <Filter>Header Files\Graphics\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Model.h">
+      <Filter>Header Files\Graphics\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Mesh.h">
+      <Filter>Header Files\Graphics\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Mouse.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Application.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\pch.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\GlfwClass.h">
       <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\JobSystem.h">
+      <Filter>Header Files\SubSystems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

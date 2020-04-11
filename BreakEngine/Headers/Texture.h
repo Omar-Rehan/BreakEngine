@@ -1,11 +1,6 @@
 #pragma once
 #include "GL/glew.h"
 #include "stb_image.h"
-#include "physfs.h"
-#include "allegro5/allegro.h"
-#include "allegro5/allegro_image.h"
-#include "allegro5/allegro_opengl.h"
-#include "allegro5/allegro_physfs.h"
 
 #include "ShaderProgram.h"
 #include "FileManager.h"
