@@ -2,9 +2,8 @@
 #include "Application.h"
 
 void Application::Initialize() {
-	m_mouse = Mouse();
 	m_camera = Camera();
-	m_pGLFW = new GlfwClass();
+	m_pGLFW = new GLFW();
 	m_pFileManager = new FileManager();
 	m_pResourceManager = new ResourceManager();
 
@@ -20,8 +19,7 @@ void Application::Terminate() {
 
 void Application::GameLoop() {
 	Timer timer;
-	m_pGLFW->SetMouse(&m_mouse);
-	m_pGLFW->SetCamera(&m_camera);
+	m_pGLFW->AttachCamera(&m_camera);
 
 
 	/// Color stuff
@@ -37,17 +35,18 @@ void Application::GameLoop() {
 
 	JobSystem jobSystem;
 	jobSystem.Initialize();
-	TestJobSystem(&jobSystem);
+	//TestJobSystem(&jobSystem);
+
+	TestButtonSequence();
 
 	while (!m_pGLFW->WindowShouldClose()) {
-		timer.Mark();
-		m_pGLFW->HandleKeyboardInput(timer.GetDeltaTimeAverage());
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		TestJobSystem2(&jobSystem, m, s);
 
-		glfwPollEvents();
-		glfwSwapBuffers(m_pGLFW->GetWindowPointer());
+		timer.Mark();
+		m_pGLFW->SwapBuffers();
+		m_pGLFW->PollEvents(timer.GetDeltaTimeAverage());
 	}
 
 	jobSystem.Terminate();
@@ -239,4 +238,18 @@ void Application::GetOddsSum(uintptr_t parameters) {
 		*interval->sum += i;
 		i += 2;
 	}
+}
+
+void Application::TestButtonSequence() {
+	std::vector<int> buttons {
+		(int)Joystick::XBOX_BUTTONS::A,
+		(int)Joystick::XBOX_BUTTONS::B,
+		(int)Joystick::XBOX_BUTTONS::X,
+		(int)Joystick::XBOX_BUTTONS::Y
+	};
+	std::function<void()> sequenceCompletedCallbackFunction = std::bind(&Application::PrintSequenceDetected, this);
+	m_pGLFW->RegisterButtonSequence(GLFW::HID::Joystick, buttons, 2.0f, sequenceCompletedCallbackFunction);
+}
+void Application::PrintSequenceDetected() {
+	std::cout << "SEQUENCE DETECTED!" << std::endl;
 }

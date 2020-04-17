@@ -8,6 +8,7 @@ public:
 	float GetDeltaTime() const;
 	float GetDeltaTimeAverage() const;
 	float GetTimeNow() const;
+	float GetTimeSinceLastMark() const;
 
 private:
 	float m_timeDeltasSum;

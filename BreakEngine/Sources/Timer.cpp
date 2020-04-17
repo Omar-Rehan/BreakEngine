@@ -17,6 +17,7 @@ void Timer::Mark() {
 		m_timeDeltas.pop();
 	}
 }
+
 float Timer::GetDeltaTime() const {
 	return m_deltaTime;
 }
@@ -25,4 +26,7 @@ float Timer::GetDeltaTimeAverage() const {
 }
 float Timer::GetTimeNow() const {
 	return static_cast<float>(glfwGetTime());
+}
+float Timer::GetTimeSinceLastMark() const {
+	return GetTimeNow() - m_prevFrameTime;
 }

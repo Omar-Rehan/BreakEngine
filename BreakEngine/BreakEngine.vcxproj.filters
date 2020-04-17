@@ -64,6 +64,12 @@
     <Filter Include="Source Files\SubSystems">
       <UniqueIdentifier>{52861f78-5e96-4d6d-b45c-1012523f6d46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\HID Management">
+      <UniqueIdentifier>{cbaa5c4a-9d63-4bda-b4bf-40a1597b3e48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\HID Management">
+      <UniqueIdentifier>{6978056b-d7af-484f-aab1-c750517fa4f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\PoolAllocator.cpp">
@@ -96,16 +102,10 @@
     <ClCompile Include="Sources\Timer.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Mouse.cpp">
-      <Filter>Source Files\Utilities</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\Camera.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Application.cpp">
-      <Filter>Source Files\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\GlfwClass.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="Sources\pch.cpp">
@@ -116,6 +116,21 @@
     </ClCompile>
     <ClCompile Include="Sources\JobSystem.cpp">
       <Filter>Source Files\SubSystems</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GLFW.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Mouse.cpp">
+      <Filter>Source Files\HID Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Keyboard.cpp">
+      <Filter>Source Files\HID Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Joystick.cpp">
+      <Filter>Source Files\HID Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\ButtonSequence.cpp">
+      <Filter>Source Files\HID Management</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -155,20 +170,29 @@
     <ClInclude Include="Headers\Mesh.h">
       <Filter>Header Files\Graphics\Models</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\Mouse.h">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
     <ClInclude Include="Headers\Application.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="Headers\pch.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\GlfwClass.h">
-      <Filter>Header Files\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="Headers\JobSystem.h">
       <Filter>Header Files\SubSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\GLFW.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Joystick.h">
+      <Filter>Header Files\HID Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Mouse.h">
+      <Filter>Header Files\HID Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Keyboard.h">
+      <Filter>Header Files\HID Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\ButtonSequence.h">
+      <Filter>Header Files\HID Management</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

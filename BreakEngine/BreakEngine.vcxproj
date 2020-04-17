@@ -174,10 +174,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Application.cpp" />
+    <ClCompile Include="Sources\ButtonSequence.cpp" />
     <ClCompile Include="Sources\Camera.cpp" />
     <ClCompile Include="Sources\FileManager.cpp" />
-    <ClCompile Include="Sources\GlfwClass.cpp" />
+    <ClCompile Include="Sources\GLFW.cpp" />
     <ClCompile Include="Sources\JobSystem.cpp" />
+    <ClCompile Include="Sources\Joystick.cpp" />
+    <ClCompile Include="Sources\Keyboard.cpp" />
     <ClCompile Include="Sources\Mesh.cpp" />
     <ClCompile Include="Sources\Model.cpp" />
     <ClCompile Include="Sources\Mouse.cpp" />
@@ -204,14 +207,17 @@
     <ClInclude Include="Headers\Application.h" />
     <ClInclude Include="Headers\Camera.h" />
     <ClInclude Include="Headers\FileManager.h" />
-    <ClInclude Include="Headers\GlfwClass.h" />
+    <ClInclude Include="Headers\GLFW.h" />
     <ClInclude Include="Headers\JobSystem.h" />
+    <ClInclude Include="Headers\Joystick.h" />
+    <ClInclude Include="Headers\Keyboard.h" />
     <ClInclude Include="Headers\Mesh.h" />
     <ClInclude Include="Headers\Model.h" />
     <ClInclude Include="Headers\Mouse.h" />
     <ClInclude Include="Headers\pch.h" />
     <ClInclude Include="Headers\PoolAllocator.h" />
     <ClInclude Include="Headers\ResourceManager.h" />
+    <ClInclude Include="Headers\ButtonSequence.h" />
     <ClInclude Include="Headers\ShaderProgram.h" />
     <ClInclude Include="Headers\StackAllocator.h" />
     <ClInclude Include="Headers\stb_image.h" />

@@ -3,7 +3,7 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 
-#include "GlfwClass.h"
+#include "GLFW.h"
 #include "FileManager.h"
 #include "ResourceManager.h"
 #include "JobSystem.h"
@@ -36,10 +36,12 @@ private:
 	void TestJobSystem2(JobSystem* jobSystem, Model& m, ShaderProgram& s);
 	static void CalculateTransformationMatrices(uintptr_t matrices);
 
+	void TestButtonSequence();
+	void PrintSequenceDetected();
+
 public:
-	Mouse m_mouse;
 	Camera m_camera;
-	GlfwClass* m_pGLFW = nullptr;
+	GLFW* m_pGLFW = nullptr;
 	FileManager* m_pFileManager = nullptr;
 	ResourceManager* m_pResourceManager = nullptr;
 };
